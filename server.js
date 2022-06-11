@@ -24,5 +24,9 @@ var port = process.env.PORT || 8080;
 
 server.listen(port, function() {
   // eslint-disable-next-line
-  console.log('Server running on port: %d', port);
+  var text = 'Free Web Building Tutorials!';
+  var url1 = 'https://www.w3schools.com';
+  let d = new URL(url1);
+  console.log(d.href);
+  console.log('Server running on port: %d', port)
 });

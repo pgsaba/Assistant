@@ -34,7 +34,6 @@
   "engineStrict": true,
   "devDependencies": {
     "babel-eslint": "^10.0.3",
-    "casperjs": "^1.1.4",
     "codecov": "^3.6.1",
     "eslint": "^5.14.0",
     "jest": "^28.1.1",
