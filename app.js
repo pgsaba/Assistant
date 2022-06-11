@@ -85,6 +85,23 @@ app.post('/api/message', function(req, res) {
       const status = err.code !== undefined && err.code > 0 ? err.code : 500;
       return res.status(status).json(err);
     }
+    console.log("Invio Messaggio");
+    //console.log(JASON.stringify(res.json(data), null, 2));
+   // var obj1 = data.result.output.generic[0].text;
+
+    var msgtext = data.result.output.generic[0].text;
+    if (msgtext.includes("http")) {
+    var startchar = msgtext.indexOf("(");
+    var endchar = msgtext.indexOf(")");
+    var strurl = msgtext.slice(startchar+1, endchar);
+    let msgurld = new URL(strurl);
+    var strmod = msgtext.slice(1, startchar-1)+"\n\r"+ msgurld;
+    data.result.output.generic[0].text = strmod;
+//    console.log(strmod);
+    }
+
+
+    console.log(msgtext);
     return res.json(data);
   });
 });

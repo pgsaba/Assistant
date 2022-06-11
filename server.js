@@ -19,14 +19,14 @@
 
 require('dotenv').config({silent: true});
 
-var server = require('./app');
-var port = process.env.PORT || 8080;
+let server = require('./app');
+let port = process.env.PORT || 8080;
 
 server.listen(port, function() {
   // eslint-disable-next-line
-  var text = 'Free Web Building Tutorials!';
-  var url1 = 'https://www.w3schools.com';
-  let d = new URL(url1);
-  console.log(d.href);
-  console.log('Server running on port: %d', port)
+//  var text = 'Free Web Building Tutorials!';
+//  var url1 = 'https://www.w3schools.com';
+// let d = new URL(url1);
+// console.log('ciao \r\n'+d.href);
+  console.log('Server running on port:', port);
 });
